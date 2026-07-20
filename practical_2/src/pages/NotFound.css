@@ -1,0 +1,80 @@
+/* ================================================
+   404 Not Found Page Styles
+   ================================================ */
+
+.notfound-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  min-height: calc(100vh - 64px);
+}
+
+.notfound-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 48px;
+  max-width: 520px;
+  width: 100%;
+  gap: 16px;
+}
+
+/* 404 graphic */
+.notfound-graphic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.notfound-icon {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #d97706;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.notfound-code {
+  font-size: 96px;
+  font-weight: 900;
+  letter-spacing: -4px;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent), #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.notfound-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.notfound-desc {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.65;
+  max-width: 380px;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}

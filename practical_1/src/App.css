@@ -1,0 +1,15 @@
+/* ===================================================
+   APP-LEVEL STYLES
+   =================================================== */
+
+/* Divider between sections */
+.section-divider {
+  height: 1px;
+  background: var(--clr-border);
+  margin: 0 var(--space-lg);
+}
+
+/* Smooth scroll offset to account for sticky nav */
+section[id] {
+  scroll-margin-top: 72px;
+}

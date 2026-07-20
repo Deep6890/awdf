@@ -1,0 +1,7 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Design system imports */
+@import './Styles/reset.css';
+@import './Styles/variables.css';
+@import './Styles/global.css';

@@ -1,0 +1,60 @@
+/* ================================================
+   CSS Design Tokens — Light Mode (default)
+   ================================================ */
+:root {
+  /* Background layers */
+  --bg:          #f0f2f5;
+  --card-bg:     #ffffff;
+  --navbar-bg:   rgba(255, 255, 255, 0.85);
+
+  /* Text */
+  --text:        #111827;
+  --text-light:  #6b7280;
+  --text-muted:  #9ca3af;
+
+  /* Borders & Shadows */
+  --border:      #e5e7eb;
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:   0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg:   0 10px 40px rgba(0,0,0,0.10);
+
+  /* Accent color — indigo/violet */
+  --accent:      #6366f1;
+  --accent-dark: #4f46e5;
+  --accent-soft: #eef2ff;
+  --accent-rgb:  99, 102, 241;
+
+  /* Utility */
+  --hover-bg:    #f3f4f6;
+  --radius:      16px;
+  --radius-sm:   10px;
+  --radius-lg:   24px;
+
+  /* Transitions */
+  --transition:  0.25s ease;
+}
+
+/* ================================================
+   CSS Design Tokens — Dark Mode
+   ================================================ */
+.dark {
+  --bg:          #0f1117;
+  --card-bg:     #1a1d27;
+  --navbar-bg:   rgba(26, 29, 39, 0.90);
+
+  --text:        #f1f5f9;
+  --text-light:  #94a3b8;
+  --text-muted:  #64748b;
+
+  --border:      #2d3148;
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.30);
+  --shadow-md:   0 4px 20px rgba(0,0,0,0.30);
+  --shadow-lg:   0 10px 40px rgba(0,0,0,0.40);
+
+  --accent:      #818cf8;
+  --accent-dark: #6366f1;
+  --accent-soft: #1e2040;
+  --accent-rgb:  129, 140, 248;
+
+  --hover-bg:    #252836;
+}

@@ -1,0 +1,158 @@
+/* ===================================================
+   FOOTER COMPONENT STYLES
+   =================================================== */
+.footer {
+  margin-top: auto;
+  padding: var(--space-2xl) 0 var(--space-lg);
+  border-top: 1px solid var(--clr-border);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: var(--grad-primary);
+}
+
+/* ---- Contact Card Grid ---- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  max-width: 260px;
+}
+
+/* Social icons */
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  background: var(--clr-bg-glass);
+  border: 1px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: rgba(108, 99, 255, 0.2);
+  border-color: rgba(108, 99, 255, 0.45);
+  transform: translateY(-3px);
+}
+
+/* ---- Link Columns ---- */
+.footer-col-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-link {
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  transition: var(--transition);
+}
+
+.footer-link:hover {
+  color: var(--clr-white);
+  padding-left: 4px;
+}
+
+/* ---- Contact Info ---- */
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  margin-bottom: 0.6rem;
+  transition: var(--transition);
+}
+
+.footer-contact-item:hover {
+  color: var(--clr-white);
+}
+
+.contact-icon {
+  font-size: 1rem;
+}
+
+/* ---- Bottom Bar ---- */
+.footer-bottom {
+  border-top: 1px solid var(--clr-border);
+  padding-top: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: var(--clr-text-muted);
+}
+
+.footer-copy span {
+  color: var(--clr-primary-lt);
+  font-weight: 600;
+}
+
+.footer-built-with {
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-built-with em {
+  color: var(--clr-accent);
+  font-style: normal;
+}

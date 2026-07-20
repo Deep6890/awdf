@@ -1,0 +1,116 @@
+/* ===================================================
+   PROJECTS COMPONENT STYLES  (Supplementary Problem)
+   =================================================== */
+.projects-section {
+  padding: var(--space-2xl) 0;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.projects-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin-top: 0.5rem;
+}
+
+/* ---- Project Cards Grid ---- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  border-radius: var(--radius-lg);
+  background: var(--clr-bg-glass);
+  border: 1px solid var(--clr-border);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  border-color: rgba(108, 99, 255, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-card-banner {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to top, var(--clr-bg-card), transparent);
+}
+
+.project-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-card-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--clr-white);
+}
+
+.project-card-desc {
+  font-size: 0.875rem;
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.project-tag {
+  background: rgba(0, 206, 201, 0.1);
+  border: 1px solid rgba(0, 206, 201, 0.25);
+  color: var(--clr-teal);
+  border-radius: var(--radius-full);
+  padding: 0.2rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.project-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--clr-primary-lt);
+  margin-top: 0.25rem;
+  transition: var(--transition);
+}
+
+.project-card-link:hover {
+  color: var(--clr-white);
+  gap: 0.65rem;
+}
