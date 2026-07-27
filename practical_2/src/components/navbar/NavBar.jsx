@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { Brain, Sun, Moon } from 'lucide-react'
+import { BookOpen, Sun, Moon } from 'lucide-react'
 import './NavBar.css'
 
 /**
@@ -17,9 +17,9 @@ export default function NavBar({ darkMode, setDarkMode }) {
       {/* Brand / Logo */}
       <Link to="/" className="navbar-brand" id="navbar-brand-link">
         <div className="navbar-logo">
-          <Brain size={22} />
+          <BookOpen size={18} />
         </div>
-        <span className="navbar-title">Brainwave</span>
+        <span className="navbar-title">Deep Kayastha</span>
       </Link>
 
       {/* Navigation links — using <NavLink> so active class is applied automatically */}
@@ -56,7 +56,7 @@ export default function NavBar({ darkMode, setDarkMode }) {
         aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
         title={darkMode ? 'Light mode' : 'Dark mode'}
       >
-        {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+        {darkMode ? <Sun size={16} /> : <Moon size={16} />}
       </button>
     </header>
   )

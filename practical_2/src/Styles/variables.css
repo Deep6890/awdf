@@ -1,60 +1,60 @@
 /* ================================================
-   CSS Design Tokens — Light Mode (default)
+   CSS Design Tokens — Cream & Brown Palette
    ================================================ */
 :root {
   /* Background layers */
-  --bg:          #f0f2f5;
-  --card-bg:     #ffffff;
-  --navbar-bg:   rgba(255, 255, 255, 0.85);
+  --bg:          #f5f0e8;
+  --card-bg:     #fdfaf4;
+  --navbar-bg:   rgba(253, 250, 244, 0.92);
 
   /* Text */
-  --text:        #111827;
-  --text-light:  #6b7280;
-  --text-muted:  #9ca3af;
+  --text:        #2c1a0e;
+  --text-light:  #7a5c44;
+  --text-muted:  #b59a82;
 
   /* Borders & Shadows */
-  --border:      #e5e7eb;
-  --shadow-sm:   0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md:   0 4px 20px rgba(0,0,0,0.08);
-  --shadow-lg:   0 10px 40px rgba(0,0,0,0.10);
+  --border:      #e2d4c0;
+  --shadow-sm:   0 1px 3px rgba(80, 40, 10, 0.07);
+  --shadow-md:   0 4px 20px rgba(80, 40, 10, 0.09);
+  --shadow-lg:   0 10px 40px rgba(80, 40, 10, 0.12);
 
-  /* Accent color — indigo/violet */
-  --accent:      #6366f1;
-  --accent-dark: #4f46e5;
-  --accent-soft: #eef2ff;
-  --accent-rgb:  99, 102, 241;
+  /* Accent color — warm brown */
+  --accent:      #7b4f2e;
+  --accent-dark: #5a3520;
+  --accent-soft: #f0e6d8;
+  --accent-rgb:  123, 79, 46;
 
   /* Utility */
-  --hover-bg:    #f3f4f6;
-  --radius:      16px;
-  --radius-sm:   10px;
-  --radius-lg:   24px;
+  --hover-bg:    #ede5d8;
+  --radius:      14px;
+  --radius-sm:   9px;
+  --radius-lg:   20px;
 
   /* Transitions */
   --transition:  0.25s ease;
 }
 
 /* ================================================
-   CSS Design Tokens — Dark Mode
+   Dark Mode (warm dark — deep coffee)
    ================================================ */
 .dark {
-  --bg:          #0f1117;
-  --card-bg:     #1a1d27;
-  --navbar-bg:   rgba(26, 29, 39, 0.90);
+  --bg:          #1a100a;
+  --card-bg:     #251710;
+  --navbar-bg:   rgba(30, 18, 10, 0.92);
 
-  --text:        #f1f5f9;
-  --text-light:  #94a3b8;
-  --text-muted:  #64748b;
+  --text:        #f0e6d8;
+  --text-light:  #c4a882;
+  --text-muted:  #8a6a50;
 
-  --border:      #2d3148;
-  --shadow-sm:   0 1px 3px rgba(0,0,0,0.30);
-  --shadow-md:   0 4px 20px rgba(0,0,0,0.30);
-  --shadow-lg:   0 10px 40px rgba(0,0,0,0.40);
+  --border:      #3d2718;
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.35);
+  --shadow-md:   0 4px 20px rgba(0,0,0,0.35);
+  --shadow-lg:   0 10px 40px rgba(0,0,0,0.45);
 
-  --accent:      #818cf8;
-  --accent-dark: #6366f1;
-  --accent-soft: #1e2040;
-  --accent-rgb:  129, 140, 248;
+  --accent:      #c4895a;
+  --accent-dark: #a86d42;
+  --accent-soft: #2e1f14;
+  --accent-rgb:  196, 137, 90;
 
-  --hover-bg:    #252836;
+  --hover-bg:    #2f1f14;
 }

@@ -1,40 +1,29 @@
 import './Projects.css';
 
 /**
- * Projects Component  (Post-Lab / Supplementary deliverable)
+ * Projects Component  (Post-lab / supplementary deliverable)
  *
  * Props:
- *  - projects {Array} – Array of project objects:
- *                       [{ title, description, tags, emoji, link }]
+ *  - projects {Array} — Optional array of project objects.
  *
- * When no prop is passed the component renders 3 hardcoded demo projects
- * (satisfying the "hardcoded list of 3 projects" requirement).
+ * Renders 3 hardcoded AIML-relevant projects by default.
  */
 function Projects({ projects }) {
   const defaultProjects = [
     {
-      emoji:       '🛒',
-      title:       'ShopCart – E-Commerce UI',
-      description: 'A responsive product listing and shopping cart built with React, featuring dynamic filtering, cart management, and a clean checkout flow.',
-      tags:        ['React', 'CSS', 'useState'],
-      link:        '#',
-      bannerColor: 'linear-gradient(135deg, #6c63ff22, #a29bfe33)',
+      title:  'Sentiment Analyser',
+      desc:   'Text classification using Naive Bayes on a movie-review dataset.',
+      tags:   ['Python', 'ML', 'NLP'],
     },
     {
-      emoji:       '🌤️',
-      title:       'WeatherNow – Live Dashboard',
-      description: 'Real-time weather application that fetches data from the OpenWeather API and presents it with animated weather icons and a 5-day forecast.',
-      tags:        ['JavaScript', 'REST API', 'Fetch'],
-      link:        '#',
-      bannerColor: 'linear-gradient(135deg, #00cec922, #55efc422)',
+      title:  'Student Grade Predictor',
+      desc:   'Predicts final grades from mid-semester scores using linear regression.',
+      tags:   ['Python', 'Pandas', 'sklearn'],
     },
     {
-      emoji:       '📝',
-      title:       'TaskBoard – Kanban Planner',
-      description: 'A drag-and-drop task management board inspired by Trello, featuring column management, local-storage persistence, and priority labelling.',
-      tags:        ['React', 'DnD', 'LocalStorage'],
-      link:        '#',
-      bannerColor: 'linear-gradient(135deg, #fd79a822, #fdcfe822)',
+      title:  'Portfolio — Practical 1',
+      desc:   'This single-page portfolio built with React + Vite using reusable components.',
+      tags:   ['React', 'Vite', 'Props'],
     },
   ];
 
@@ -43,51 +32,20 @@ function Projects({ projects }) {
   return (
     <section className="projects-section" id="projects" aria-labelledby="projects-heading">
       <div className="container">
+        <span className="section-label">What I've Built</span>
+        <h2 className="projects-heading" id="projects-heading">Projects</h2>
 
-        {/* ── Section Header ── */}
-        <div className="projects-header">
-          <span className="section-label">What I've Built</span>
-          <h2 className="projects-heading" id="projects-heading">
-            Featured <span className="gradient-text">Projects</span>
-          </h2>
-        </div>
-
-        {/* ── Project Cards ── */}
-        <ul className="projects-grid" role="list" aria-label="Projects">
-          {items.map((project) => (
-            <li key={project.title} className="project-card">
-              {/* Coloured banner */}
-              <div
-                className="project-card-banner"
-                style={{ background: project.bannerColor || 'var(--clr-bg-card)' }}
-                aria-hidden="true"
-              >
-                {project.emoji}
-              </div>
-
-              <div className="project-card-body">
-                <h3 className="project-card-title">{project.title}</h3>
-                <p className="project-card-desc">{project.description}</p>
-
-                {/* Tech tags */}
-                <ul className="project-card-tags" role="list" aria-label="Technologies used">
-                  {project.tags.map((tag) => (
-                    <li key={tag} className="project-tag">{tag}</li>
-                  ))}
-                </ul>
-
-                <a
-                  href={project.link || '#'}
-                  className="project-card-link"
-                  aria-label={`View ${project.title} project`}
-                >
-                  View Project →
-                </a>
+        <ul className="projects-grid" role="list">
+          {items.map(p => (
+            <li key={p.title} className="project-card card">
+              <h3 className="project-title">{p.title}</h3>
+              <p className="project-desc">{p.desc}</p>
+              <div className="project-tags">
+                {p.tags.map(t => <span key={t} className="project-tag">{t}</span>)}
               </div>
             </li>
           ))}
         </ul>
-
       </div>
     </section>
   );

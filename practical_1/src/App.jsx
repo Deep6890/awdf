@@ -1,70 +1,55 @@
-import './App.css';
+import './index.css';
 import Header   from './components/Header';
 import About    from './components/About';
 import Skills   from './components/Skills';
 import Projects from './components/Projects';
 import Footer   from './components/Footer';
 
-/* ============================================================
-   STUDENT DATA  – Edit these values to personalise the portfolio
-   ============================================================ */
-const STUDENT_NAME   = 'Alex Johnson';
-const STUDENT_EMAIL  = 'alex.johnson@charusat.edu.in';
-const STUDENT_GITHUB = 'alexjohnson';
-
-/**
- * Skills array passed as a prop to the Skills component.
- * Demonstrates the "pass an array of skills as a prop" requirement.
+/*
+ * Student data passed as props to child components.
+ * Demonstrates one-directional data flow (App → child).
  */
-const SKILL_LIST = [
-  'React', 'Vite', 'JavaScript (ES6+)', 'HTML5', 'CSS3',
-  'Node.js', 'Express', 'Python', 'MySQL', 'Git', 'Figma',
-];
+const STUDENT_NAME  = 'Deep Kayastha';
+const STUDENT_EMAIL = '24aiml018@charusat.edu.in';
+const STUDENT_ROLL  = '24AIML018';
 
-/**
- * Theme color passed as a prop to the Header.
- * Demonstrates the "add a theme color prop" supplementary requirement.
+/*
+ * Props:
+ *  - skillList passed to Skills (array rendered dynamically)
+ *  - themeColor passed to Header (inline style prop — supplementary req.)
  */
-const THEME_COLOR = 'linear-gradient(135deg, #6c63ff 0%, #fd79a8 100%)';
+const SKILL_LIST = ['Python', 'Machine Learning', 'React', 'JavaScript', 'SQL', 'C++', 'Git'];
+
+const THEME_COLOR = '#7b4f2e';   /* brown — applied as inline style to Header bar */
 
 /**
- * App – Root component
+ * App — Root component
  *
- * Composes all four required components (Header, About, Skills, Footer)
- * plus the supplementary Projects component into a single-page layout.
- * Props are passed from here down to child components (one-directional data flow).
+ * BUG #1: Projects component is imported but NOT composed into the return.
+ * The component exists, but it will never appear on screen.
+ * Fix: add <Projects /> between <Skills /> and <Footer />.
  */
 function App() {
   return (
     <>
-      {/* ── 1. Header ── receives name prop + themeColor prop ── */}
-      <Header
-        name={STUDENT_NAME}
-        themeColor={THEME_COLOR}
-      />
+      {/* 1. Header — receives name and themeColor props */}
+      <Header name={STUDENT_NAME} themeColor={THEME_COLOR} roll={STUDENT_ROLL} />
 
-      {/* ── 2. About ── receives bio and tags props ── */}
+      {/* 2. About — receives bio prop */}
       <About
-        bio="I'm a passionate B.Tech IT student at CHARUSAT, fascinated by how code
-             can transform ideas into interactive experiences. I love working with
-             React and modern JavaScript, and I'm always eager to collaborate on
-             meaningful projects."
-        emoji="🧑‍💻"
-        tags={['React', 'JavaScript', 'Node.js', 'Python', 'Open Source']}
+        bio="B.Tech AIML student at CHARUSAT, interested in machine
+             learning, data analysis, and building clean web applications with React."
       />
 
-      {/* ── 3. Skills ── receives skillList prop (array) ── */}
+      {/* 3. Skills — receives skillList prop (array, rendered dynamically) */}
       <Skills skillList={SKILL_LIST} />
 
-      {/* ── 4. Projects ── supplementary component (post-lab deliverable) ── */}
-      <Projects />
+      {/* BUG #1: <Projects /> is missing here — component never renders */}
+      {/* Fix: uncomment the line below */}
+      {/* <Projects /> */}
 
-      {/* ── 5. Footer ── receives name, email, and github props ── */}
-      <Footer
-        name={STUDENT_NAME}
-        email={STUDENT_EMAIL}
-        github={STUDENT_GITHUB}
-      />
+      {/* 4. Footer — receives name and email props */}
+      <Footer name={STUDENT_NAME} email={STUDENT_EMAIL} />
     </>
   );
 }

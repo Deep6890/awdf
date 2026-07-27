@@ -1,23 +1,21 @@
-/* ===================================================
-   HEADER COMPONENT STYLES
-   =================================================== */
+/* ================================================
+   Header — Cream & Brown
+   ================================================ */
 
-/* ---- Top Navigation Bar ---- */
+/* Nav */
 .header-nav {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 100;
-  padding: 1rem 0;
-  background: rgba(10, 14, 26, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--clr-border);
-  transition: var(--transition);
+  background: rgba(253, 250, 244, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  height: 58px;
+  display: flex;
+  align-items: center;
 }
 
-.header-nav .container {
+.nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,160 +23,65 @@
 
 .nav-brand {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 16px;
   font-weight: 700;
-  background: var(--grad-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
 }
 
 .nav-links {
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  gap: 4px;
 }
 
 .nav-link {
-  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 7px;
+  font-size: 13.5px;
   font-weight: 500;
-  color: var(--clr-text-muted);
-  position: relative;
-  transition: var(--transition);
+  color: var(--text-light);
+  transition: background 0.2s, color 0.2s;
 }
+.nav-link:hover { background: var(--hover-bg); color: var(--text); }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--grad-primary);
-  border-radius: var(--radius-full);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--clr-white);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-}
-
-/* ---- Hero Section ---- */
+/* Hero */
 .header-hero {
-  padding: calc(5rem + 72px) 0 5rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.header-hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(108, 99, 255, 0.18) 0%, transparent 70%);
-  pointer-events: none;
+  padding: 64px 0 52px;
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: rgba(108, 99, 255, 0.12);
-  border: 1px solid rgba(108, 99, 255, 0.3);
-  border-radius: var(--radius-full);
-  padding: 0.35rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--clr-primary-lt);
-  margin-bottom: 1.5rem;
-  animation: fadeInDown 0.6s ease both;
-}
-
-.hero-badge-dot {
-  width: 7px;
-  height: 7px;
-  background: var(--clr-teal);
-  border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  margin-bottom: 18px;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 7vw, 4.5rem);
-  font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  animation: fadeInUp 0.7s ease 0.1s both;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.4px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.hero-bar {
+  display: block;
+  width: 56px;
+  height: 4px;
+  border-radius: 100px;
+  margin-bottom: 18px;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  color: var(--clr-text-muted);
-  max-width: 540px;
-  margin: 0 auto 2rem;
-  animation: fadeInUp 0.7s ease 0.2s both;
-}
-
-.hero-theme-bar {
-  display: inline-block;
-  height: 4px;
-  width: 60px;
-  border-radius: var(--radius-full);
-  margin-bottom: 2rem;
-  animation: scaleIn 0.6s ease 0.3s both;
-}
-
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 2rem;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  border: none;
-  background: var(--grad-primary);
-  color: var(--clr-white);
-  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.4);
-  transition: var(--transition);
-  animation: fadeInUp 0.7s ease 0.35s both;
-}
-
-.hero-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.55);
-}
-
-/* ===================================================
-   ANIMATIONS
-   =================================================== */
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes scaleIn {
-  from { opacity: 0; transform: scaleX(0); }
-  to   { opacity: 1; transform: scaleX(1); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.5; transform: scale(0.85); }
+  font-size: 15px;
+  color: var(--text-light);
+  margin-bottom: 28px;
+  max-width: 480px;
 }

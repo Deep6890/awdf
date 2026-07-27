@@ -1,0 +1,287 @@
+/* ================================================
+   Projects Page — Cream & Brown
+   ================================================ */
+
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+}
+
+.project-body {
+  flex: 1;
+  padding: 20px 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+
+.project-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.project-desc {
+  font-size: 13.5px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.project-detail-box {
+  padding: 12px 14px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.6;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.icon-link {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-light);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  text-decoration: none;
+}
+
+.icon-link:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ================================================
+   Repository Card
+   ================================================ */
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repo-card:hover {
+  transform: translateY(-3px);
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 20px 14px;
+}
+
+.repo-avatar {}
+
+.repo-avatar img {}
+
+.repo-user {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.repo-name {}
+
+.repo-owner {}
+
+.repo-body {
+  flex: 1;
+  padding: 0 20px 14px;
+}
+
+.repo-description {}
+
+.repo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.repo-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ============================
+   Repository Cards
+============================ */
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: .25s;
+  overflow: hidden;
+}
+
+.repo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+}
+
+.repo-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+}
+
+.repo-user {
+  flex: 1;
+}
+
+.repo-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.repo-owner {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+.repo-visibility {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 5px 10px;
+  background: var(--accent-soft);
+  border-radius: 20px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.repo-body {
+  flex: 1;
+  padding: 0 18px 18px;
+}
+
+.repo-description {
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 14px;
+  min-height: 48px;
+}
+
+.repo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding: 14px 18px;
+}
+
+.repo-meta {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.repo-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+.repo-language {
+  padding: 3px 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.repo-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: white;
+  background: var(--accent);
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: .2s;
+}
+
+.repo-link:hover {
+  transform: scale(1.05);
+}

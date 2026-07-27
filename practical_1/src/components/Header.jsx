@@ -4,87 +4,47 @@ import './Header.css';
  * Header Component
  *
  * Props:
- *  - name       {string}  – The student's display name shown in the hero section.
- *  - themeColor {string}  – A CSS color / gradient string applied to the decorative bar
- *                           and the brand logo. Demonstrates the "theme color" prop requirement.
- *  - navLinks   {Array}   – Optional array of { label, href } objects for the nav bar.
+ *  - name       {string} — Student name displayed in nav and hero.
+ *  - themeColor {string} — CSS color applied to the decorative bar (inline style prop).
+ *  - roll       {string} — Roll number shown as a badge.
  */
-function Header({ name, themeColor, navLinks }) {
-  const defaultLinks = [
-    { label: 'About',    href: '#about' },
-    { label: 'Skills',   href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact',  href: '#contact' },
-  ];
-
-  const links = navLinks || defaultLinks;
-
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  };
-
+function Header({ name, themeColor, roll }) {
   return (
     <>
-      {/* ── Sticky Navigation Bar ── */}
+      {/* Sticky Navigation Bar */}
       <nav className="header-nav" aria-label="Primary navigation">
-        <div className="container">
-          <span
-            className="nav-brand"
-            style={{ backgroundImage: themeColor || undefined }}
-          >
-            {name || 'Portfolio'}
-          </span>
-
+        <div className="container nav-inner">
+          <span className="nav-brand">{name || 'Portfolio'}</span>
           <ul className="nav-links" role="list">
-            {links.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="nav-link"
-                  onClick={(e) => handleNavClick(e, link.href)}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            <li><a href="#about"    className="nav-link">About</a></li>
+            <li><a href="#skills"   className="nav-link">Skills</a></li>
+            <li><a href="#projects" className="nav-link">Projects</a></li>
+            <li><a href="#contact"  className="nav-link">Contact</a></li>
           </ul>
         </div>
       </nav>
 
-      {/* ── Hero Section ── */}
+      {/* Hero Section */}
       <header className="header-hero" id="home">
         <div className="container">
-          {/* Status badge */}
-          <p className="hero-badge">
-            <span className="hero-badge-dot" />
-            Open to Opportunities
-          </p>
+          <span className="hero-badge">{roll || '24AIML018'} · B.Tech AIML</span>
 
-          {/* Main heading – name passed as prop */}
           <h1 className="hero-title">
-            Hi, I&apos;m{' '}
-            <span className="gradient-text">
-              {name || 'Your Name'}
-            </span>
+            {name || 'Deep Kayastha'}
           </h1>
 
-          {/* Decorative theme-color bar – demonstrates inline style prop */}
+          {/* Decorative bar — themeColor prop applied as inline style */}
           <span
-            className="hero-theme-bar"
-            style={{ background: themeColor || 'var(--grad-primary)' }}
+            className="hero-bar"
+            style={{ background: themeColor || '#7b4f2e' }}
             aria-hidden="true"
           />
 
           <p className="hero-subtitle">
-            A passionate developer crafting modern, responsive web experiences
-            using React, Vite, and JavaScript.
+            AI & Machine Learning Student · CHARUSAT
           </p>
 
-          <a href="#about" className="hero-cta" onClick={(e) => handleNavClick(e, '#about')}>
-            Explore My Work ↓
-          </a>
+          <a href="#about" className="btn-primary">Explore ↓</a>
         </div>
       </header>
     </>

@@ -1,11 +1,11 @@
 /* ================================================
-   Global Base Styles
+   Global Base Styles — Cream & Brown Academic Theme
    ================================================ */
 
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
   line-height: 1.6;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -21,7 +21,7 @@ body {
 .page-content {
   flex: 1;
   padding: 40px 28px;
-  max-width: 1100px;
+  max-width: 1060px;
   margin: 0 auto;
   width: 100%;
 }
@@ -41,17 +41,18 @@ body {
 
 /* Section heading */
 .section-heading {
-  font-size: 28px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 26px;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 8px;
-  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
 }
 
 .section-subheading {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--text-light);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 /* Badge */
@@ -64,6 +65,7 @@ body {
   font-weight: 600;
   background: var(--accent-soft);
   color: var(--accent);
+  border: 1px solid var(--border);
 }
 
 /* Primary button */
@@ -71,7 +73,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 11px 22px;
   border-radius: var(--radius-sm);
   background: var(--accent);
   color: #fff;
@@ -81,12 +83,13 @@ body {
   cursor: pointer;
   transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
   text-decoration: none;
+  letter-spacing: 0.1px;
 }
 
 .btn-primary:hover {
   background: var(--accent-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.35);
+  box-shadow: 0 5px 18px rgba(var(--accent-rgb), 0.30);
 }
 
 .btn-primary:active {
@@ -98,12 +101,12 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 11px 22px;
+  padding: 10px 20px;
   border-radius: var(--radius-sm);
   background: transparent;
   color: var(--text);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px solid var(--border);
   cursor: pointer;
   transition: background 0.2s ease, border-color 0.2s ease;
@@ -112,5 +115,6 @@ body {
 
 .btn-secondary:hover {
   background: var(--hover-bg);
-  border-color: var(--text-muted);
+  border-color: var(--accent);
+  color: var(--accent);
 }
