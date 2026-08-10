@@ -1,0 +1,66 @@
+/* ================================================
+   CSS Design Tokens — Cream & Brown Palette (Glassmorphism)
+   ================================================ */
+:root {
+  /* Background layers */
+  --bg:          #f5f0e8;
+  --card-bg:     rgba(253, 250, 244, 0.4);
+  --navbar-bg:   rgba(253, 250, 244, 0.6);
+
+  /* Glassmorphism Tokens */
+  --glass-blur:  blur(16px);
+  --glass-shadow: 0 8px 32px 0 rgba(80, 40, 10, 0.15);
+
+  /* Text */
+  --text:        #2c1a0e;
+  --text-light:  #7a5c44;
+  --text-muted:  #b59a82;
+
+  /* Borders & Shadows */
+  --border:      rgba(226, 212, 192, 0.5);
+  --shadow-sm:   0 1px 3px rgba(80, 40, 10, 0.07);
+  --shadow-md:   0 4px 20px rgba(80, 40, 10, 0.09);
+  --shadow-lg:   0 10px 40px rgba(80, 40, 10, 0.12);
+
+  /* Accent color — warm brown */
+  --accent:      #7b4f2e;
+  --accent-dark: #5a3520;
+  --accent-soft: rgba(240, 230, 216, 0.7);
+  --accent-rgb:  123, 79, 46;
+
+  /* Utility */
+  --hover-bg:    rgba(237, 229, 216, 0.6);
+  --radius:      20px;
+  --radius-sm:   12px;
+  --radius-lg:   24px;
+
+  /* Transitions */
+  --transition:  0.3s ease;
+}
+
+/* ================================================
+   Dark Mode (warm dark — deep coffee)
+   ================================================ */
+.dark {
+  --bg:          #1a100a;
+  --card-bg:     rgba(37, 23, 16, 0.4);
+  --navbar-bg:   rgba(30, 18, 10, 0.6);
+
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+
+  --text:        #f0e6d8;
+  --text-light:  #c4a882;
+  --text-muted:  #8a6a50;
+
+  --border:      rgba(61, 39, 24, 0.5);
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.35);
+  --shadow-md:   0 4px 20px rgba(0,0,0,0.35);
+  --shadow-lg:   0 10px 40px rgba(0,0,0,0.45);
+
+  --accent:      #c4895a;
+  --accent-dark: #a86d42;
+  --accent-soft: rgba(46, 31, 20, 0.7);
+  --accent-rgb:  196, 137, 90;
+
+  --hover-bg:    rgba(47, 31, 20, 0.6);
+}

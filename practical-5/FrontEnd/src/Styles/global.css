@@ -1,0 +1,148 @@
+/* ================================================
+   Global Base Styles — Cream & Brown Academic Theme
+   ================================================ */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* App root receives .dark or .light class from App.jsx useState */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page content wrapper */
+.page-content {
+  flex: 1;
+  padding: 40px 28px;
+  max-width: 1060px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Shared card style (Glassmorphism) */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.25s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Section heading */
+.section-heading {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+.section-subheading {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 28px;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+/* Primary button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  letter-spacing: 0.1px;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 18px rgba(var(--accent-rgb), 0.30);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--hover-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ================================================
+   Background Texture (Glassmorphism Support)
+   ================================================ */
+.bg-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(123, 79, 46, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(196, 137, 90, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(226, 212, 192, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
+  transition: background 0.3s ease;
+}
+
+.app-root.dark .bg-texture {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(196, 137, 90, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(168, 109, 66, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(90, 53, 32, 0.1) 0px, transparent 50%);
+}
