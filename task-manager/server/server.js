@@ -1,14 +1,9 @@
 require('dotenv').config();
 
-// Validate JWT_SECRET
-if (!process.env.JWT_SECRET) {
-  if (process.env.NODE_ENV === 'production') {
-    console.error('[FATAL] JWT_SECRET environment variable is required to start the server in production.');
-    process.exit(1);
-  } else {
-    console.warn('[WARN] JWT_SECRET not found in .env; using local development secret.');
-    process.env.JWT_SECRET = 'dev_jwt_secret_key_change_in_production';
-  }
+// Validate JWT_SECRET (must be present in .env)
+if (!process.env.JWT_SECRET && process.env.NODE_ENV !== 'test') {
+  console.error('[FATAL] JWT_SECRET environment variable is required in .env to start the server.');
+  process.exit(1);
 }
 
 const app = require('./app');

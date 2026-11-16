@@ -23,7 +23,7 @@ const auth = (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, secret || 'test_jwt_secret_fallback');
+    const decoded = jwt.verify(token, secret);
     req.user = decoded;
     next();
   } catch (err) {
