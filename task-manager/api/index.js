@@ -12,5 +12,12 @@ module.exports = async (req, res) => {
       console.error('Vercel DB connection error:', err.message);
     }
   }
+
+  // Restore original request path if Vercel rewrote the path to /api
+  const matchedPath = req.headers['x-matched-path'];
+  if (matchedPath && req.url === '/api') {
+    req.url = matchedPath;
+  }
+
   return app(req, res);
 };

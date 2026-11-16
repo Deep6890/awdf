@@ -1,28 +1,15 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/index.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "task-manager/client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
-    { "src": "/health", "dest": "api/index.js" },
-    { "src": "/register", "dest": "api/index.js" },
-    { "src": "/login", "dest": "api/index.js" },
-    { "src": "/me", "dest": "api/index.js" },
-    { "src": "/debug/(.*)", "dest": "api/index.js" },
-    { "src": "/tasks/(.*)", "dest": "api/index.js" },
-    { "src": "/tasks", "dest": "api/index.js" },
-    { "src": "/api/(.*)", "dest": "api/index.js" },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/health", "destination": "/api" },
+    { "source": "/register", "destination": "/api" },
+    { "source": "/login", "destination": "/api" },
+    { "source": "/me", "destination": "/api" },
+    { "source": "/debug/:path*", "destination": "/api" },
+    { "source": "/tasks/:path*", "destination": "/api" },
+    { "source": "/tasks", "destination": "/api" },
+    { "source": "/api/:path*", "destination": "/api" },
+    { "source": "/((?!health|register|login|me|debug|tasks|api).*)", "destination": "/index.html" }
   ]
 }
