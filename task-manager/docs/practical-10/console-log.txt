@@ -1,0 +1,35 @@
+================================================================================
+Practical 10: Asynchronous Processing with EventEmitter Console Log Excerpt
+Environment: NOTIFICATION_DELAY_MS=2000
+================================================================================
+
+[2026-11-16T19:02:12.944Z] POST /register
+[2026-11-16T19:02:12.974Z] POST /login
+
+--- 1. Testing POST /tasks with NOTIFICATION_DELAY_MS=2000 ---
+[2026-11-16T19:02:12.982Z] POST /tasks
+[API] Response sent at 2026-11-16T19:02:12.986Z
+[Notification] Task "P10 Event Async Test Task" created at 2026-11-16T19:02:12.986Z by event_tester_1794855732909@example.com
+[CLIENT] HTTP 201 received in 6.23 ms
+[CLIENT] Created Task ID: 6afb53348a41c9066a5c5114
+[TEST] Waiting 2.5s for async event handler to complete in background...
+[Notification] Handler finished at 2026-11-16T19:02:14.999Z
+
+--- 2. Testing DELETE /tasks with NOTIFICATION_DELAY_MS=2000 ---
+[2026-11-16T19:02:15.492Z] DELETE /tasks/6afb53348a41c9066a5c5114
+[API] Response sent at 2026-11-16T19:02:15.495Z
+[Notification] Task "P10 Event Async Test Task" deleted at 2026-11-16T19:02:15.496Z by event_tester_1794855732909@example.com
+[CLIENT] HTTP 200 received in 6.51 ms
+[TEST] Waiting 2.5s for delete notification handler to complete...
+[Notification] Handler finished at 2026-11-16T19:02:17.504Z
+
+--- 3. Testing Handler Error Resiliency ---
+[Notification Error] Error in handler for task undefined: Cannot read properties of null (reading 'title')
+[TEST PASSED] Custom 'handler-error' caught: "Cannot read properties of null (reading 'title')" for task undefined
+
+--- Summary Verification ---
+- API response time during POST: 6.23 ms (non-blocking; 2000ms delay runs in background)
+- API response time during DELETE: 6.51 ms (non-blocking; 2000ms delay runs in background)
+- Execution order: [API] Response sent -> [Notification] started -> Handler finished
+- Error handler caught error gracefully: true (process remained active and stable)
+================================================================================

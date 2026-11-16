@@ -1,0 +1,11 @@
+> task-manager-client@1.0.0 build
+> vite build
+
+vite v8.1.5 building client environment for production...
+transforming...✓ 1819 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.80 kB │ gzip:  0.44 kB
+dist/assets/index-qzFbQrss.css   19.66 kB │ gzip:  4.46 kB
+dist/assets/index-DxtXC_o6.js   272.54 kB │ gzip: 86.72 kB
+✓ built in 2.30s

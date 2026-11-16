@@ -1,0 +1,31 @@
+/* ================================================
+   Footer — Cream & Brown
+   ================================================ */
+
+.footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding: 20px 0;
+  background: var(--card-bg);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.footer-email {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.footer-email:hover { color: var(--accent-dark); text-decoration: underline; }

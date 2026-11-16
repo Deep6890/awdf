@@ -1,0 +1,61 @@
+/* ================================================
+   404 Not Found — Cream & Brown
+   ================================================ */
+
+.notfound-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 28px;
+}
+
+.notfound-card {
+  max-width: 400px;
+  width: 100%;
+  padding: 52px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.notfound-graphic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+}
+
+.notfound-code {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin: 0;
+}
+
+.notfound-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.notfound-desc {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.65;
+  max-width: 300px;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 6px;
+}

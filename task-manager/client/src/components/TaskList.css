@@ -1,0 +1,21 @@
+.task-list-wrapper {
+  margin-top: 1rem;
+}
+
+.task-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.empty-text {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin: 0;
+}

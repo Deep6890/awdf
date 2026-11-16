@@ -1,0 +1,29 @@
+{
+  "name": "task-manager-server",
+  "version": "1.0.0",
+  "description": "Task Manager Backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "dev:nocache": "cross-env CACHE_ENABLED=false node server.js",
+    "dev:slow-events": "cross-env NOTIFICATION_DELAY_MS=2000 node server.js",
+    "test": "jest",
+    "lint": "node --check app.js server.js config/db.js models/Task.js controllers/taskController.js controllers/aiController.js routes/taskRoutes.js routes/aiRoutes.js middleware/logger.js middleware/requireJson.js middleware/validateObjectId.js middleware/notFound.js middleware/errorHandler.js middleware/aiRateLimit.js cache/cache.js events/events.js events/listeners.js services/groq.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "cross-env": "^10.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.4",
+    "node-cache": "^5.1.2"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.3.2"
+  }
+}
