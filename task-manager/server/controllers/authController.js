@@ -7,7 +7,7 @@ const register = async (req, res, next) => {
   try {
     const { email, password } = req.body || {};
 
-    const normalizedEmail = email.toLowerCase().trim();
+    const normalizedEmail = typeof email === 'string' ? email.toLowerCase().trim() : '';
     const existingUser = await User.findOne({ email: normalizedEmail });
     if (existingUser) {
       return res.status(409).json({
@@ -38,7 +38,7 @@ const login = async (req, res, next) => {
   try {
     const { email, password } = req.body || {};
 
-    const normalizedEmail = email.toLowerCase().trim();
+    const normalizedEmail = typeof email === 'string' ? email.toLowerCase().trim() : '';
     const user = await User.findOne({ email: normalizedEmail });
     if (!user) {
       return res.status(401).json({
@@ -54,6 +54,12 @@ const login = async (req, res, next) => {
     }
 
     const secret = process.env.JWT_SECRET;
+    if (!secret) {
+      return res.status(500).json({
+        error: 'JWT_SECRET environment variable is missing on server'
+      });
+    }
+
     const token = jwt.sign(
       { id: user._id, email: user.email },
       secret,

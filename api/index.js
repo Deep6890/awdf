@@ -1,15 +1,19 @@
+const mongoose = require('mongoose');
 const app = require('../task-manager/server/app');
 const connectDB = require('../task-manager/server/config/db');
 
-let isConnected = false;
-
 module.exports = async (req, res) => {
-  if (!isConnected) {
+  // Ensure MongoDB connection before processing request
+  if (mongoose.connection.readyState !== 1) {
     try {
       await connectDB();
-      isConnected = true;
     } catch (err) {
       console.error('Vercel DB connection error:', err.message);
+      return res.status(500).json({
+        error: 'Database connection failed',
+        details: err.message,
+        tip: 'Please ensure MONGO_URI is configured in Vercel Environment Variables and MongoDB Atlas IP access allows 0.0.0.0/0'
+      });
     }
   }
 

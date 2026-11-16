@@ -21,9 +21,19 @@ const errorHandler = (err, req, res, next) => {
     });
   }
 
+  if (
+    err.name === 'MongooseServerSelectionError' ||
+    (err.message && err.message.includes('buffering timed out'))
+  ) {
+    return res.status(503).json({
+      error: 'Database connection error',
+      details: 'Unable to reach MongoDB. Please check MONGO_URI and IP whitelist in MongoDB Atlas.'
+    });
+  }
+
   const statusCode = err.statusCode || err.status || 500;
   res.status(statusCode).json({
-    error: err.message && statusCode !== 500 ? err.message : 'Something went wrong'
+    error: err.message && statusCode !== 500 ? err.message : (err.message || 'Something went wrong')
   });
 };
 
